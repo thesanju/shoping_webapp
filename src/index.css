@@ -1,0 +1,119 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 60% 97%;
+    --foreground: 262 60% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 262 60% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 262 60% 12%;
+
+    --primary: 262 60% 22%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 260 40% 92%;
+    --secondary-foreground: 262 60% 22%;
+
+    --muted: 260 40% 92%;
+    --muted-foreground: 260 30% 56%;
+
+    --accent: 315 90% 62%;
+    --accent-foreground: 262 60% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 30% 86%;
+    --input: 260 30% 86%;
+    --ring: 262 60% 32%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "ss02";
+    letter-spacing: -0.01em;
+    background-image: radial-gradient(circle at 50% -20%, rgba(128, 255, 219, 0.1) 0%, rgba(255, 181, 167, 0.1) 100%);
+  }
+  
+  /* Retro catalog specific styles */
+  .retro-card {
+    @apply bg-white border border-retro-neutral/20 p-4 transition-all duration-300 hover:shadow-md rounded-lg;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.08);
+  }
+  
+  .retro-btn {
+    @apply px-4 py-2 rounded-full border border-retro-neutral/40 transition-colors duration-300 hover:bg-retro-softgray;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+  }
+  
+  .retro-badge {
+    @apply inline-block px-3 py-1 text-xs rounded text-foreground;
+  }
+  
+  .retro-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .retro-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6;
+  }
+  
+  /* New retro elements */
+  .retro-gradient {
+    background: linear-gradient(90deg, #FFB5A7 0%, #A7C7FF 100%);
+  }
+  
+  .retro-bubble {
+    @apply rounded-full bg-retro-softgray px-4 py-2 inline-flex items-center;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.05);
+  }
+  
+  .retro-title {
+    @apply font-bold tracking-tight;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.05);
+  }
+  
+  .retro-box {
+    @apply bg-white rounded-lg p-6;
+    box-shadow: 6px 6px 0 rgba(0,0,0,0.08);
+  }
+  
+  .wavy-border {
+    position: relative;
+  }
+  
+  .wavy-border::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    height: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='10' viewBox='0 0 100 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 5C10 0 15 10 25 5C35 0 40 10 50 5C60 0 65 10 75 5C85 0 90 10 100 5V10H0V5Z' fill='%23FFB5A7'/%3E%3C/svg%3E");
+    background-size: 100px 10px;
+    background-repeat: repeat-x;
+  }
+}
